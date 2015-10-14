@@ -85,6 +85,11 @@ function media_youtube_preprocess_media_youtube_video(&$variables) {
     }
   }
 
+  if ($variables['options']['hidecontrols']) {
+    // Add controls parameters to the query.
+    $query['controls'] = '0';
+  }
+
   // Non-query options.
   if ($variables['options']['nocookie']) {
     $url_base = 'youtube-nocookie.com';
